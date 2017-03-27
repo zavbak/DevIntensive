@@ -1,15 +1,22 @@
 package softdesign.com.devintensive.ui.activities;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import softdesign.com.devintensive.R;
 import softdesign.com.devintensive.utils.ConstantManager;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static String TAG = ConstantManager.TAG_PREFIX + "Main Activity";
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,11 +24,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate");
 
-        if(savedInstanceState == null){
 
-        }else {
-            
-        }
+    }
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d(TAG, "onSaveInstanceState");
+
+
     }
 
     @Override
@@ -52,5 +64,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "onDestroy");
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+
+        }
     }
 }
